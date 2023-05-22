@@ -1,5 +1,5 @@
 import react, { useState, useEffect, useContext } from "react";
-import { View, Text, Button, TextInput } from "react-native";
+import { View, Text, Button, TextInput, StyleSheet } from "react-native";
 import AppContext from "./forms/AppContext";
 import axios from "axios";
 import { Platform } from "react-native";
@@ -77,14 +77,7 @@ function Change_Password() {
             setcurrpassword(element);
           }}
           placeholder="Enter your current password"
-          style={{
-            marginLeft: "6%",
-            backgroundColor: "#ffffff",
-            width: "80%",
-            height: 40,
-            borderBottomWidth: 1,
-            borderColor: "#dcdcdc",
-          }}
+          style={Style}
         />
       </View>
       <View style={{ marginLeft: "40%", marginTop: "1%" }}>
@@ -106,14 +99,7 @@ function Change_Password() {
             setnewpassword(element);
           }}
           placeholder="New Password"
-          style={{
-            marginLeft: "6%",
-            backgroundColor: "#ffffff",
-            width: "80%",
-            borderBottomWidth: 1,
-            height: 40,
-            borderColor: "#dcdcdc",
-          }}
+          style={styles.textinputstyle}
         />
       </View>
       <View style={{ marginLeft: "36%", marginTop: "1%" }}>
@@ -135,14 +121,7 @@ function Change_Password() {
             setconpass(element);
           }}
           placeholder="Confirm Password"
-          style={{
-            marginLeft: "6%",
-            backgroundColor: "#ffffff",
-            width: "80%",
-            height: 40,
-            borderBottomWidth: 1,
-            borderColor: "#dcdcdc",
-          }}
+          style={styles.textinputstyle}
         />
       </View>
       <View style={{ marginLeft: "42%", marginTop: "1%" }}>
@@ -162,4 +141,15 @@ function Change_Password() {
     </View>
   );
 }
+
+const styles=StyleSheet.create({
+  textinputstyle:{
+      marginLeft: "6%",
+      backgroundColor: "#ffffff",
+      width: "80%",
+      height: 40,
+      borderBottomWidth: 1,
+      borderColor: "#dcdcdc",
+  },
+});
 export default Change_Password;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import { Camera } from "expo-camera";
 import AppContext from "./forms/AppContext";
 import axios from "axios";
@@ -98,15 +98,7 @@ export default function Cameraa({ navigation }) {
             }}
           >
             <TouchableOpacity
-              style={{
-                flex: 0.3,
-                alignSelf: "flex-end",
-                alignItems: "center",
-                backgroundColor: "#D6252E",
-                padding: 5,
-                borderRadius: 5,
-                marginBottom: "5%",
-              }}
+              style={styles.camera}
               onPress={() => {
                 setType(
                   type === Camera.Constants.Type.back
@@ -118,16 +110,7 @@ export default function Cameraa({ navigation }) {
               <Text style={{ fontSize: 18, color: "white" }}> Flip </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={{
-                flex: 0.5,
-                backgroundColor: "#D6252E",
-                padding: 5,
-                borderRadius: 5,
-                //marginLeft: "40%",
-                alignSelf: "flex-end",
-                alignItems: "center",
-                marginBottom: "5%",
-              }}
+              style={StyleSheet.flip}
               onPress={takePicture}
             >
               <Text style={{ fontSize: 18, color: "white" }}>
@@ -141,3 +124,25 @@ export default function Cameraa({ navigation }) {
     </View>
   );
 }
+
+const styles=StyleSheet.create({
+flip:{
+    flex: 0.5,
+    backgroundColor: "#D6252E",
+    padding: 5,
+    borderRadius: 5,
+    //marginLeft: "40%",
+    alignSelf: "flex-end",
+    alignItems: "center",
+    marginBottom: "5%",
+},
+camera:{
+  flex: 0.3,
+  alignSelf: "flex-end",
+  alignItems: "center",
+  backgroundColor: "#D6252E",
+  padding: 5,
+  borderRadius: 5,
+  marginBottom: "5%",
+},
+});
