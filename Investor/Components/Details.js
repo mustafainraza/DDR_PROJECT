@@ -18,6 +18,7 @@ import RenderProfile from "./RenderProfile";
 import { AuthContext } from "../store/auth-context";
 import URL from "../config/env";
 import AppContext from "./forms/AppContext";
+import ProjectWithStyle from "./ProjectWithStyle";
 
 export default function Details({ navigation, route }) {
   const authCtx = useContext(AuthContext);
@@ -113,22 +114,20 @@ export default function Details({ navigation, route }) {
           height: "65%",
         }}
       >
-        <View style={{ height: "75%" }}>
-          <Project
-            title={props.title}
-            disc={props.disc}
-            funded={props.funded}
-            backed={props.backed}
-            hours={props.hours}
-            data={props.data}
-            C_ID={props.C_ID}
-            campaign_type={props.campaign_type}
-            campaign_id={props.campaign_id}
-            isLiked={props.isLiked}
-            A={props.A}
-            isbacked={props.isbacked}
-          />
-        </View>
+        <ProjectWithStyle
+          title={props.title}
+          disc={props.disc}
+          funded={props.funded}
+          backed={props.backed}
+          hours={props.hours}
+          data={props.data}
+          C_ID={props.C_ID}
+          campaign_type={props.campaign_type}
+          campaign_id={props.campaign_id}
+          isLiked={props.isLiked}
+          A={props.A}
+          isbacked={props.isbacked}
+        />
 
         <View style={{ marginLeft: "13%" }}>
           <Text style={{ color: "white" }}>Goal : {props.GOAL}</Text>
