@@ -37,27 +37,20 @@ const BackedProjects = (props) => {
         />
       </View>
       <View style={{ height: "100%", paddingHorizontal: 5, paddingTop: 5 }}>
-        <Text style={{ fontWeight: "600", fontSize: 16, color: "white" }}>
+        <Text style={ styles.textstyle2}>
           {props.item.campaign_title}
         </Text>
         <View style={{ marginTop: "1%" }}></View>
         <Text style={{ color: "white" }} numberOfLines={2}>
           {props.item.campaign_description}
         </Text>
-        <Text
-          style={{
-            color: "#F23B25",
-            marginTop: 10,
-            fontWeight: "500",
-            color: "#D6252E",
-          }}
-        >
+        <Text style={styles.textstyle}>
           Amount Invested:{" "}
           <Text style={{ color: "white" }}>
             {props.item.backedamount + " Rs"}
           </Text>
         </Text>
-        <Text style={{ color: "#F23B25", fontWeight: "500", color: "#D6252E" }}>
+         <Text style={styles.textstyle1}> 
           Status:{" "}
           {props.item.hours <= 0 ? (
             <Text style={{ color: "white" }}>Closed </Text>
@@ -89,5 +82,21 @@ const styles = StyleSheet.create({
   tinyLogo: {
     width: "100%",
     height: "100%",
+  },
+  textstyle:{
+      color: "#F23B25",
+      marginTop: 10,
+      fontWeight: "500",
+      color: "#D6252E",
+  },
+  textstyle1:{
+    color: "#F23B25", 
+    fontWeight: "500", 
+    color: "#D6252E",
+  },
+  textstyle2:{
+    fontWeight: "600", 
+    fontSize: 16, 
+    color: "white",
   },
 });
